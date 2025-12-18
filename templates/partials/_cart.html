@@ -1,0 +1,39 @@
+<div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+        <h2>🛍️ Себет (<span id="cartCount">0</span>)</h2>
+        <button class="modal-close" id="closeCart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+        <div class="empty-cart">
+            <h3>Себет бос</h3>
+            <p>Тапсырыс беру үшін тауарларды қосыңыз</p>
+        </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+        <div class="address-section" id="cartAddressSection">
+            <h4>📦 Жеткізу адресі</h4>
+            <div class="current-address" id="currentAddressDisplay">
+                Адрес көрсетілмеген
+            </div>
+            <button class="change-address-btn" id="changeAddressBtn">
+                Адресті өзгерту
+            </button>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span>Тауарлар:</span>
+                <span id="cartTotal">0₸</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span>Жеткізу:</span>
+                <span id="deliveryFee">1500₸</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 600; padding-top: 15px; border-top: 2px solid rgba(255,255,255,0.3);">
+                <span>Барлығы:</span>
+                <span id="grandTotal">1500₸</span>
+            </div>
+        </div>
+        <button class="btn" style="width: 100%; margin: 0;" id="checkoutBtn">Тапсырыс беру</button>
+    </div>
+</div>

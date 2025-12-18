@@ -1,0 +1,43 @@
+<header>
+    <div class="container">
+        <div class="header-content">
+            <a href="/" class="logo">Milady</a>
+            <nav>
+                <ul>
+                    <li><a href="#coffee">Кофе</a></li>
+                    <li><a href="#desserts">Десерттер</a></li>
+                    <li><a href="#delivery">Жеткізу</a></li>
+                    <li><a href="#contacts">Байланыс</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <div class="user-menu">
+                    <div class="user-avatar" id="userAvatar">
+                        ?
+                    </div>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="user-info">
+                            <div id="userName">Қонақ</div>
+                            <div class="user-email" id="userEmail"></div>
+                            <div class="user-address" id="userAddressDisplay" style="display: none;">
+                                <strong>Адрес:</strong> <span id="addressText"></span>
+                            </div>
+                            <button class="edit-address-btn" id="editAddressBtn" style="display: none;">
+                                Адресті өзгерту
+                            </button>
+                        </div>
+                        <a href="#" class="dropdown-item" id="authButton">Кіру / Тіркелу</a>
+                        <a href="#" class="dropdown-item" id="myAddressButton" style="display: none;">Менің адресім</a>
+                        <a href="#" class="dropdown-item" id="logoutButton" style="display: none;">Шығу</a>
+                    </div>
+                </div>
+                <button class="icon-btn" id="cartButton">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

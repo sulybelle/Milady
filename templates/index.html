@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="hero">
+        <div class="container">
+            <div class="delivery-badge">Астана бойынша жеткізу</div>
+            <h1>Milady Cafe</h1>
+            <p>Астананың ең дәмді кофесі мен таңғажайып десерттері - тек бізде!</p>
+            <div>
+                <a href="#coffee" class="btn">Мәзірді көру</a>
+                <a href="#delivery" class="btn btn-outline">Жеткізу туралы</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="coffee">
+        <div class="section-title">
+            <h2>Кофе</h2>
+            <div class="divider">
+                <div class="divider-line" style="background: linear-gradient(to left, transparent, var(--gold));"></div>
+                <div class="divider-dot"></div>
+                <div class="divider-dot divider-dot-large"></div>
+                <div class="divider-dot"></div>
+                <div class="divider-line"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="menu-grid" id="coffeeMenu"></div>
+        </div>
+    </section>
+
+    <section class="options-section">
+        <div class="section-title">
+            <h2>Қосымша опциялар</h2>
+            <div class="divider">
+                <div class="divider-line" style="background: linear-gradient(to left, transparent, var(--gold));"></div>
+                <div class="divider-dot"></div>
+                <div class="divider-dot divider-dot-large"></div>
+                <div class="divider-dot"></div>
+                <div class="divider-line"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="options-grid">
+                <div class="option-category">
+                    <h3>Сүт</h3>
+                    <ul>
+                        <li>Кокос</li>
+                        <li>Кәдімгі</li>
+                        <li>Бадем</li>
+                    </ul>
+                </div>
+                <div class="option-category">
+                    <h3>Сироп</h3>
+                    <ul>
+                        <li>Карамель</li>
+                        <li>Жанға жаңғақ</li>
+                        <li>Ваниль</li>
+                        <li>Шоколад</li>
+                    </ul>
+                </div>
+                <div class="option-category">
+                    <h3>Өлшемдер</h3>
+                    <ul>
+                        <li>S (Кішкене)</li>
+                        <li>M (Орташа)</li>
+                        <li>L (Үлкен)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="desserts">
+        <div class="section-title">
+            <h2>Десерттер</h2>
+            <div class="divider">
+                <div class="divider-line" style="background: linear-gradient(to left, transparent, #ec4899);"></div>
+                <div class="divider-dot" style="background: #ec4899;"></div>
+                <div class="divider-dot divider-dot-large" style="background: linear-gradient(135deg, #f9a8d4, #ec4899);"></div>
+                <div class="divider-dot" style="background: #ec4899;"></div>
+                <div class="divider-line" style="background: linear-gradient(to right, transparent, #ec4899);"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="menu-grid" id="dessertsMenu"></div>
+        </div>
+    </section>
+
+    <section class="delivery-section" id="delivery">
+        <div class="container">
+            <div class="delivery-info">
+                <h2>Астана қаласы бойынша жеткізу</h2>
+                <p>Біз Астананың барлық аудандарына кофе және десерттерді жеткіземіз. Тапсырыс беру үшін бізбен байланысыңыз!</p>
+                <p><strong>Жеткізу уақыты:</strong> 30-60 минут</p>
+                <p><strong>Жеткізу құны:</strong> 1500₸ (10000₸-ден жоғары болса тегін)</p>
+                <a href="#contacts" class="btn">Тапсырыс беру</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

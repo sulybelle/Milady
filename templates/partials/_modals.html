@@ -1,0 +1,167 @@
+<div class="modal" id="authModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="modal-close" id="closeAuthModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h2>Milady Coffee</h2>
+            <p>Жеке кабинетіңізге кіріңіз</p>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="loginTab">Кіру</button>
+                <button class="auth-tab" id="registerTab">Тіркелу</button>
+            </div>
+
+            <div id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Электронды пошта</label>
+                    <input type="email" id="loginEmail" placeholder="email@example.com">
+                    <div class="form-error" id="loginEmailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Құпия сөз</label>
+                    <input type="password" id="loginPassword" placeholder="Құпия сөзіңіз">
+                    <div class="form-error" id="loginPasswordError"></div>
+                </div>
+                <div class="forgot-password">
+                    <a href="#" id="forgotPasswordLink">Құпия сөзді ұмыттыңыз ба?</a>
+                </div>
+                <button class="btn" style="width: 100%;" id="loginButton">Кіру</button>
+            </div>
+        
+            <div id="registerForm" style="display: none;">
+                <div class="form-group">
+                    <label for="registerName">Аты-жөні</label>
+                    <input type="text" id="registerName" placeholder="Аты-жөніңіз">
+                    <div class="form-error" id="registerNameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Электронды пошта</label>
+                    <input type="email" id="registerEmail" placeholder="email@example.com">
+                    <div class="form-error" id="registerEmailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Құпия сөз</label>
+                    <input type="password" id="registerPassword" placeholder="Кемінде 6 таңба">
+                    <div class="form-error" id="registerPasswordError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="registerPhone">Телефон нөмірі</label>
+                    <input type="tel" id="registerPhone" placeholder="+7 (777) 123-45-67">
+                    <div class="form-error" id="registerPhoneError"></div>
+                </div>
+                <button class="btn" style="width: 100%;" id="registerButton">Тіркелу</button>
+            </div>
+            
+            <div id="forgotPasswordForm" style="display: none;">
+                <div class="form-group">
+                    <label for="forgotEmail">Электронды пошта</label>
+                    <input type="email" id="forgotEmail" placeholder="email@example.com">
+                    <div class="form-error" id="forgotEmailError"></div>
+                </div>
+                <button class="btn" style="width: 100%; margin-bottom: 15px;" id="resetPasswordButton">Құпия сөзді қалпына келтіру</button>
+                <button class="btn btn-outline" style="width: 100%;" id="backToLoginButton">Артқа</button>
+            </div>
+            
+            <div class="auth-footer">
+                <p>Кіру арқылы сіз <a href="#">Пайдалану шарттары</a> мен <a href="#">Құпиялылық саясатымен</a> келісесіз</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="addressModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>📦 Жеткізу адресі</h2>
+            <button class="modal-close" id="closeAddressModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Тапсырысты жеткізу үшін адресіңізді көрсетіңіз</p>
+            
+            <div class="form-group">
+                <label>Аудан</label>
+                <div class="district-buttons">
+                    <button class="district-btn" data-district="Алматы">Алматы</button>
+                    <button class="district-btn" data-district="Есіл">Есіл</button>
+                    <button class="district-btn" data-district="Сарыарқа">Сарыарқа</button>
+                    <button class="district-btn" data-district="Байқоңыр">Байқоңыр</button>
+                    <button class="district-btn" data-district="Нұрсұлтан">Нұрсұлтан</button>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="addressStreet">Көше, үй, пәтер</label>
+                <textarea id="addressStreet" placeholder="Мысалы: Достық көшесі, 15, 42-пәтер, кіреберіс 3, домофон 42"></textarea>
+                <div class="address-example">Толық адресіңізді жазыңыз: көше, үй/көшет, пәтер, кіреберіс, домофон</div>
+                <div class="form-error" id="addressStreetError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="addressNote">Қосымша ескертулер</label>
+                <textarea id="addressNote" placeholder="Мысалы: Үйдің артқы қақпасынан, 3-қабат, сары есік"></textarea>
+            </div>
+            
+            <button class="btn" style="width: 100%;" id="saveAddressButton">Адресті сақтау</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="orderModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img id="modalImage" src="" alt="">
+            <button class="modal-close" id="closeOrderModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            
+            <div class="option-group" id="sizeGroup">
+                <label>Өлшемі</label>
+                <div class="option-buttons">
+                    <div class="option-btn active" data-size="S">S<br><small></small></div>
+                    <div class="option-btn" data-size="M">M<br><small></small></div>
+                    <div class="option-btn" data-size="L">L<br><small></small></div>
+                </div>
+            </div>
+            
+            <div class="option-group">
+                <label>Сүт түрі</label>
+                <div class="option-buttons">
+                    <div class="option-btn active" data-milk="Кәдімгі">Кәдімгі</div>
+                    <div class="option-btn" data-milk="Кокос">Кокос</div>
+                    <div class="option-btn" data-milk="Бадем">Бадем</div>
+                </div>
+            </div>
+            
+            <div class="option-group">
+                <label>Сироп</label>
+                <div class="option-buttons" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="option-btn active" data-syrup="Ваниль">Ваниль</div>
+                    <div class="option-btn" data-syrup="Карамель">Карамель</div>
+                    <div class="option-btn" data-syrup="Жаңғақ">Жаңғақ</div>
+                    <div class="option-btn" data-syrup="Шоколад">Шоколад</div>
+                </div>
+            </div>
+            
+            <div class="option-group">
+                <label>Саны</label>
+                <div class="quantity-control">
+                    <button class="quantity-btn" id="decreaseQuantity">−</button>
+                    <span class="quantity-display" id="quantity">1</span>
+                    <button class="quantity-btn" id="increaseQuantity">+</button>
+                </div>
+            </div>
+            
+            <div class="order-modal-footer" id="addToCartButton">
+                <span>Себетке қосу</span>
+                <span id="totalPrice">1450₸</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="success-message" id="successMessage">
+    <div>✅ Тапсырыс сәтті қабылданды!</div>
+</div>
