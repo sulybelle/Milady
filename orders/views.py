@@ -8,7 +8,6 @@ from rest_framework import viewsets
 from .models import Coffee, Dessert, Address, Order, OrderItem
 from .serializers import CoffeeSerializer, DessertSerializer
 
-# Стандартты API (Кофе мен Десерттер үшін)
 class CoffeeViewSet(viewsets.ModelViewSet):
     queryset = Coffee.objects.all()
     serializer_class = CoffeeSerializer
@@ -17,7 +16,6 @@ class DessertViewSet(viewsets.ModelViewSet):
     queryset = Dessert.objects.all()
     serializer_class = DessertSerializer
 
-# --- АВТОРИЗАЦИЯ (LOGIN / REGISTER) ---
 
 @csrf_exempt
 def register_view(request):
@@ -31,19 +29,17 @@ def register_view(request):
             if User.objects.filter(email=email).exists():
                 return JsonResponse({'success': False, 'message': 'Email already registered'}, status=400)
             
-            # Жаңа қолданушы құру
             user = User.objects.create_user(username=username, email=email, password=password)
             user.first_name = data.get('first_name', '')
             user.save()
             
-            # Автоматты түрде кіргізу
             login(request, user)
             
             return JsonResponse({
                 'success': True,
                 'username': user.username,
                 'email': user.email,
-                'phone': '' # Қажет болса UserProfile моделін қосу керек
+                'phone': '' 
             })
         except Exception as e:
             return JsonResponse({'success': False, 'message': str(e)}, status=400)

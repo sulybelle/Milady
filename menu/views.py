@@ -22,12 +22,10 @@ class OrderViewSet(viewsets.ModelViewSet):
     serializer_class = OrderSerializer
     
     def get_queryset(self):
-        # Показываем пользователю только его заказы
         if self.request.user.is_authenticated:
             return Order.objects.filter(user=self.request.user).order_by('-created_at')
         return Order.objects.none()
 
-# --- AUTH (Ручная реализация) ---
 
 @csrf_exempt
 def register_view(request):
@@ -101,7 +99,7 @@ def get_current_address(request):
                 'note': addr.note
             })
         except Address.DoesNotExist:
-            return JsonResponse({}, safe=False) # Пустой объект, если адреса нет
+            return JsonResponse({}, safe=False) 
     return JsonResponse({'error': 'Not authenticated'}, status=403)
 
 @csrf_exempt
@@ -140,7 +138,6 @@ def create_order(request):
                 status='new'
             )
             
-            # 2. Создаем товары в заказе
             for item in items_data:
                 OrderItem.objects.create(
                     order=order,

@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Coffee, Dessert, Order, OrderItem, Address
 
-# Красивое отображение товаров в заказе
 class OrderItemInline(admin.TabularInline):
     model = OrderItem
     extra = 0

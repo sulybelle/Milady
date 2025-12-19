@@ -19,7 +19,6 @@ class Dessert(models.Model):
     def __str__(self):
         return self.name
 
-# --- ЖАҢА МОДЕЛЬДЕР ---
 
 class Address(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='address')
