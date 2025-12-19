@@ -12,16 +12,13 @@ let selectedDistrict = '';
 let addressStreet = '';
 let addressNote = '';
 
-// --- БАПТАУЛАР ---
-// WhatsApp нөміріңіз (7-ден бастап, мысалы: 7707...)
-const WHATSAPP_NUMBER = "77478403626"; 
+const WHATSAPP_NUMBER = "77020292446"; 
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeEventListeners();
     loadUser();
     fetchMenuData(); 
     
-    // Dropdown жабу (егер ашық тұрса, басқа жерді басқанда жабылады)
     document.addEventListener('click', function(event) {
         const userMenu = document.querySelector('.user-menu');
         const userDropdown = document.getElementById('userDropdown');
@@ -121,14 +118,13 @@ function loadDefaultData() {
     renderMenu();
 }
 
-// --- БАСТЫ ТҮЗЕТУ ОСЫ ЖЕРДЕ ---
 function renderMenu() {
     const coffeeMenu = document.getElementById('coffeeMenu');
     const dessertsMenu = document.getElementById('dessertsMenu');
 
     if (coffeeMenu) {
         coffeeMenu.innerHTML = coffeeItems.map(item => {
-            // Бағаны санға айналдырамыз
+            
             const base = parseInt(item.base_price || item.basePrice);
             const safeBase = isNaN(base) ? 0 : base;
 
@@ -167,7 +163,6 @@ function renderMenu() {
         `}).join('');
     }
     
-    // Add event listeners (click)
     document.querySelectorAll('.add-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const id = parseInt(this.getAttribute('data-id'));
@@ -181,7 +176,6 @@ function renderMenu() {
 function updatePrice() {
     if (!currentItem) return;
     
-    // Бағаны санға айналдырамыз
     const base = parseInt(currentItem.base_price || currentItem.basePrice);
     const safeBase = isNaN(base) ? 0 : base;
     
@@ -202,7 +196,6 @@ function updatePrice() {
 function addToCart() {
     if (!currentItem) return;
     
-    // Себетке қосқанда да бағаны сан ретінде сақтаймыз
     const base = parseInt(currentItem.base_price || currentItem.basePrice);
     const safeBase = isNaN(base) ? 0 : base;
     
@@ -681,7 +674,6 @@ function toggleCart() {
     if (document.getElementById('cartDrawer').classList.contains('active')) updateAddressDisplay();
 }
 
-// WhatsApp + Backend
 async function checkout() {
     if (!currentUser) { toggleCart(); openAuthModal(); showSuccessMessage('Тапсырыс беру үшін жүйеге кіріңіз'); return; }
     if (cart.length === 0) { showSuccessMessage('Себет бос'); return; }
@@ -708,7 +700,6 @@ async function checkout() {
         const data = await response.json();
 
         if (response.ok) {
-            // Backend-ке сәтті кетті, енді WhatsApp ашамыз
             sendToWhatsApp(orderData);
             
             const orders = JSON.parse(localStorage.getItem('milady_orders') || '[]');
@@ -725,7 +716,6 @@ async function checkout() {
 
     } catch (e) {
         console.error(e);
-        // Интернет жоқ болса да WhatsApp-қа жібереміз
         sendToWhatsApp(orderData);
         cart = []; updateCart(); toggleCart();
         showSuccessMessage('Тапсырыс (Offline) қабылданды!');
@@ -751,10 +741,8 @@ function sendToWhatsApp(orderData) {
     
     message += `\n*💰 Барлығы: ${total}₸*\n`;
     
-    // БҰЛ ЕҢ МАҢЫЗДЫ ЖЕР: Телефонда ашылуы үшін location.href қолданамыз
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${77020292446}?text=${encodeURIComponent(message)}`;
     
-    // Егер компьютер болса - жаңа терезе, телефон болса - сол терезеде ашу
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         window.location.href = url;
     } else {
